@@ -14,13 +14,13 @@ namespace SlideImage
     public partial class Form1 : Form
     {
         private string[] fordelFile = null;
-        private int start = 0;
         private int selected = 0;
-        private int end;
+        private string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "//Image";
         public Form1()
         {
             InitializeComponent();
-            fordelFile = Directory.GetFiles("Image", "*.jpg");
+          
+            fordelFile = Directory.GetFiles(path, "*.jpg");
             if(fordelFile.Length == 0)
             {
                 MessageBox.Show("Không có ảnh trong fordel Image", "Lỗi");
